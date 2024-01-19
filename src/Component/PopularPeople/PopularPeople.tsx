@@ -38,7 +38,7 @@ function PopularPeople() {
                     total={data?.length}
                     onChange={handlePageChange} style={{ background: '#fff', width: '100%', padding: '1rem', borderRadius: '8px' }} />
             </Row>
-        </div>
+        </div> 
     )
 }
 
