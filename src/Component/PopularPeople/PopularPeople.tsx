@@ -40,6 +40,6 @@ function PopularPeople() {
             </Row>
         </div> 
     )
-}
+}    
 
 export default PopularPeople
