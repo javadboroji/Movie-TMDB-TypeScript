@@ -108,12 +108,13 @@ const GetPerson = async () => {
   });
 }
 const GetPeople = async ():Promise<PopularPeople> => {
-  return await axios.get(`${baseUrl}/3/trending/person/day`, {
+  const result= await axios.get(`${baseUrl}/3/trending/person/day`, {
     headers: {
       "Authorization": `Bearer ${apiKey}`,
       "accept": "application/json",
     },
   });
+  return result.data
 }
 
 export { GetPopular, TopRate ,NowPlaying ,searchMovie,GetDetailMovie,GetImageslMovie,GetReviewsMovie,GetGenresMovie,GetUnComingMovie,GetPerson,GetPeople};

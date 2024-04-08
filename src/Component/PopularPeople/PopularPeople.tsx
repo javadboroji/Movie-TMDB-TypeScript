@@ -16,11 +16,13 @@ function PopularPeople() {
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
     };
+    console.log(data);
+
     return (
         <div className='container mx-auto'>
             <h1 className='text-yellow-600 font-bold lg:text-6xl text-3xl px-4 text-left  py-8'> Popular People  </h1>
             <Row>
-                {data && displayedData.map((people: people, i: number) => {
+                {data && displayedData?.map((people: people, i: number) => {
                     return (
                         <Col xs={24} md={12} lg={6} style={{ padding: '0 1rem' }} key={i} >
                             <div>
@@ -34,12 +36,24 @@ function PopularPeople() {
                     )
                 })}
                 <Pagination current={currentPage}
+
                     pageSize={pageSize}
                     total={data?.length}
-                    onChange={handlePageChange} style={{ background: '#fff', width: '100%', padding: '1rem', borderRadius: '8px' }} />
+                    onChange={handlePageChange} 
+                    itemRender={(page, type, originalElement) => {
+                        if (type === 'page') {
+                            return (
+                                <span style={{ color: '#EFBC9B' }}>
+                                    {page}
+                                </span>
+                            );
+                        }
+                        return originalElement;
+                    }}
+                    style={{ background: 'transparent', color: '#fff', width: '100%', padding: '1rem', borderRadius: '8px' }} />
             </Row>
-        </div> 
+        </div>
     )
-}    
+}
 
 export default PopularPeople

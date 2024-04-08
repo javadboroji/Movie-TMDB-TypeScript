@@ -1,5 +1,5 @@
 import { useQuery, QueryObserverResult, useMutation } from "@tanstack/react-query";
-import type { PopularData, Popular, apiResponse, PopularPeople } from "../types";
+import type { PopularData, Popular, apiResponse, PopularPeople, people } from "../types";
 import { GetPopular, TopRate, NowPlaying, searchMovie, GetDetailMovie, GetImageslMovie, GetReviewsMovie, GetGenresMovie, GetUnComingMovie, GetPeople } from "../Api";
 import { AxiosError, AxiosResponse } from "axios";
 
@@ -118,8 +118,8 @@ const usePeople = () => {
     queryKey: ["people"],
     queryFn: GetPeople,
     refetchOnWindowFocus: false,
-    select: (data:any) => {
-      let people = data?.data?.results;
+    select: (data:PopularPeople) => {
+      let people = data.results;
       return people
     }
   })

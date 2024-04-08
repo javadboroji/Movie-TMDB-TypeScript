@@ -1,6 +1,7 @@
 import React, { Children, ReactNode } from 'react'
 import HeaderAnt from '../../Component/Heaader/Header'
 import { Outlet } from 'react-router-dom';
+import Footer from '../../Component/Footer/Footer';
  
 interface LayoutProps {
     children: React.ReactNode;
@@ -13,7 +14,7 @@ function Layout({children}:LayoutProps) {
          <HeaderAnt />
          <Outlet />
          {children}
-         
+         <Footer/>
     </>
   )
 }

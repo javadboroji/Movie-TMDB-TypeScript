@@ -6,6 +6,7 @@ import NowPlay from '../../Component/NowPlay/NowPlay'
 import Genres from '../../Component/Genres/Genres'
 import UnComing from '../../Component/UnComing/UnComing'
 import PopularPeople from '../../Component/PopularPeople/PopularPeople'
+import Footer from '../../Component/Footer/Footer'
 
 function Home() {
     return (
@@ -15,6 +16,7 @@ function Home() {
             <NowPlay />
             <UnComing/>
             <PopularPeople />
+           
         </>
     )
 }
